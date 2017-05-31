@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 cp /home/pi/nuvem.conf /etc/nginx/sites-available/nuvem.conf
 sudo ln -s /etc/nginx/sites-available/nuvem.conf /etc/nginx/sites-enabled/
 nginx -t
