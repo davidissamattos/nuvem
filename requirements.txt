@@ -1,4 +1,3 @@
 gunicorn
 flask
-numpy
-scipy
+importlib
