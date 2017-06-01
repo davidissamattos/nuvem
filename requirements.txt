@@ -1,3 +1,4 @@
 gunicorn
 flask
-importlib
+numpy
+pygame
