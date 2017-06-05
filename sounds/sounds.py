@@ -2,6 +2,17 @@ import numpy as np
 import pygame
 import os
 import sys
+import time
+
+def Keepsoundon():
+    f1 = os.path.join(os.path.dirname(__file__), 'wav')
+    f2 = os.path.join(f1, 'whitenoise.wav')
+    pygame.mixer.music.load(f2)
+    print "playing sound"
+    pygame.mixer.music.play()
+    #pygame.mixer.music.set_volume()
+    time.sleep(10)
+    pygame.mixer.music.stop()
 
 class Sounds:
     def __init__(self):
@@ -10,7 +21,7 @@ class Sounds:
 
     def playsound(self,wavefile):
         f1 = os.path.join(os.path.dirname(__file__), 'wav')
-        f2 =  os.path.join(f1,wavefile)
+        f2 = os.path.join(f1,wavefile)
         pygame.mixer.music.load(f2)
         pygame.mixer.music.play()
 
@@ -20,3 +31,4 @@ class Sounds:
 
     def thunder(self):
         """Thunder sound"""
+

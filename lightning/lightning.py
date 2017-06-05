@@ -5,10 +5,19 @@ except ImportError:
 
 import numpy as np
 
+pin = 26
+
 class Lightning:
     def __init__(self):
         """Init classs for lightning"""
         GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin,GPIO.OUT)
+
+    def turnOn(self):
+        GPIO.output(pin,GPIO.HIGH)
+
+    def turnOff(self):
+        GPIO.output(pin,GPIO.LOW)
 
     def testlamp(self):
         """Testing turning on and off the lamps in one second"""
