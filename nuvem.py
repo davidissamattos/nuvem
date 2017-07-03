@@ -36,8 +36,8 @@ def rainandthunderstorm():
     #s = Sounds()
     #s.testsound()
 
-    #lightning = Lightning()
-    #lightning.teach_lightning()
+    lightning = Lightning()
+    lightning.lightning_rainandthunderstorm()
 
 
     return redirect(url_for('index'))
