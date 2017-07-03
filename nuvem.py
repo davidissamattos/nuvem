@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask import render_template
 from werkzeug.contrib.fixers import ProxyFix
 from sounds.sounds import Sounds
@@ -15,26 +15,79 @@ app = Flask(__name__)
 #This is to play sounds. It is always initialized and on
 pygame.mixer.init()
 
-def keep_sound_on():
-    scheduler = BackgroundScheduler()
-    scheduler.start()
-    scheduler.add_job(
-        func=Keepsoundon,
-        trigger=IntervalTrigger(seconds=11),
-        id='sound_on',
-        name='Keep sound on by pulsing an unaudible beep to the speakers every 60s',
-        replace_existing=True)
-    # Shut down the scheduler when exiting the app
-    atexit.register(lambda: scheduler.shutdown())
+# def keep_sound_on():
+#     scheduler = BackgroundScheduler()
+#     scheduler.start()
+#     scheduler.add_job(
+#         func=Keepsoundon,
+#         trigger=IntervalTrigger(seconds=11),
+#         id='sound_on',
+#         name='Keep sound on by pulsing an unaudible beep to the speakers every 60s',
+#         replace_existing=True)
+#     # Shut down the scheduler when exiting the app
+#     atexit.register(lambda: scheduler.shutdown())
 
 @app.route('/')
 def index():
-    s = Sounds()
-    s.testsound()
     output = render_template('index.html')
     return output
 
 
+@app.route('/rain/')
+def rain():
+    """ Turn on the lights and sound of rain """
+    #s = Sounds()
+    #s.testsound()
+
+    lightning = Lightning()
+    lightning.lightning_rain()
+
+    return redirect(url_for('index'))
+
+@app.route('/rainandthunderstorm/')
+def rainandthunderstorm():
+    """ Blink lights and sound of strong rain and thunder"""
+    #s = Sounds()
+    #s.testsound()
+
+    #lightning = Lightning()
+    #lightning.teach_lightning()
+
+
+    return redirect(url_for('index'))
+
+@app.route('/turnon/')
+def turnon():
+    """ Turn on the lights and a sound of thunder """
+    #s = Sounds()
+    #s.testsound()
+
+    #lightning = Lightning()
+    #lightning.teach_lightning()
+
+    return redirect(url_for('index'))
+
+@app.route('/turnoff/')
+def turnoff():
+    """ Turn off the lights and a sound of thunder """
+    #s = Sounds()
+    #s.testsound()
+
+    #lightning = Lightning()
+    #lightning.teach_lightning()
+
+    return redirect(url_for('index'))
+
+@app.route('/lightrain/')
+def lightrain():
+    """ Only sound of light rain """
+    #s = Sounds()
+    #s.testsound()
+
+    #lightning = Lightning()
+    #lightning.teach_lightning()
+
+    return redirect(url_for('index'))
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
