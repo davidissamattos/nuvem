@@ -45,8 +45,8 @@ def rainandthunderstorm():
 @app.route('/turnon/')
 def turnon():
     """ Turn on the lights and a sound of thunder """
-    #s = Sounds()
-    #s.testsound()
+    s = Sounds()
+    s.thunder_turnon()
 
     lightning = Lightning()
     lightning.lightning_turnon()
@@ -56,8 +56,8 @@ def turnon():
 @app.route('/turnoff/')
 def turnoff():
     """ Turn off the lights and a sound of thunder """
-    #s = Sounds()
-    #s.testsound()
+    s = Sounds()
+    s.thunder_thurnoff()
 
     lightning = Lightning()
     lightning.lightning_turnoff()

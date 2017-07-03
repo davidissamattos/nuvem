@@ -31,5 +31,12 @@ class Sounds:
 
     def thunder(self):
         """Thunder sound"""
-        #self.playsound('thunder.wav')
+        self.playsound('thunder1.wav')
 
+    def thunder_turnon(self):
+        """Thunder sound"""
+        self.playsound("thunder1.wav")
+
+    def thunder_thurnoff(self):
+        """Thunder sound"""
+        self.playsound("thunder1.wav")
