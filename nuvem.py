@@ -48,8 +48,8 @@ def turnon():
     #s = Sounds()
     #s.testsound()
 
-    #lightning = Lightning()
-    #lightning.teach_lightning()
+    lightning = Lightning()
+    lightning.lightning_turnon()
 
     return redirect(url_for('index'))
 
@@ -59,8 +59,8 @@ def turnoff():
     #s = Sounds()
     #s.testsound()
 
-    #lightning = Lightning()
-    #lightning.teach_lightning()
+    lightning = Lightning()
+    lightning.lightning_turnoff()
 
     return redirect(url_for('index'))
 

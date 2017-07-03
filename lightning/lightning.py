@@ -37,3 +37,11 @@ class Lightning:
     def lightning_rain(self):
         """Light without blinking"""
         self.turnOn()
+
+    def lightning_turnon(self):
+        """Turn on the lights"""
+        self.turnOn()
+
+    def lightning_turnoff(self):
+        """Turn off the lights"""
+        self.turnOff()
