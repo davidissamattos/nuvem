@@ -45,3 +45,15 @@ class Lightning:
     def lightning_turnoff(self):
         """Turn off the lights"""
         self.turnOff()
+
+    def lightning_rainandthunderstorm(self):
+        """Blinking lights"""
+        #Ligar a luz
+        self.turnOn()
+
+        delay = np.random.uniform(0.3, 1.5, 1)[0]
+        #delay
+        time.sleep(delay)
+
+        #Desligar a luz
+        self.turnOff()
