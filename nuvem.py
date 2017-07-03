@@ -8,6 +8,8 @@ import pygame
 
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
+
 #This is to play sounds. It is always initialized and on
 pygame.mixer.init()
 
