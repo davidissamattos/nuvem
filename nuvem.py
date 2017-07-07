@@ -4,7 +4,7 @@ from werkzeug.contrib.fixers import ProxyFix
 from sounds.sounds import Sounds
 from lightning.lightning import Lightning
 import pygame
-
+import os
 
 
 app = Flask(__name__)
@@ -84,4 +84,5 @@ def isOn():
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
     #keep_sound_on()
+    os.system('homebridge &')
     app.run()
