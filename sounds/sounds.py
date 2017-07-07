@@ -26,7 +26,7 @@ class Sounds:
         pygame.mixer.music.play()
 
     def turnoffsound(self):
-        pygame.mixer.stop()
+        pygame.mixer.music.stop()
 
     def select_random_thunder(self):
         number = int(round(np.random.uniform(1, 8, 1)[0],0))
