@@ -22,8 +22,8 @@ def index():
 @app.route('/rain/')
 def rain():
     """ Turn on the lights and sound of rain """
-    #s = Sounds()
-    #s.testsound()
+    s = Sounds()
+    s.rainsound()
 
     lightning = Lightning()
     lightning.lightning_rain()
@@ -67,11 +67,8 @@ def turnoff():
 @app.route('/lightrain/')
 def lightrain():
     """ Only sound of light rain """
-    #s = Sounds()
-    #s.testsound()
-
-    #lightning = Lightning()
-    #lightning.teach_lightning()
+    s = Sounds()
+    s.lightrain()
 
     return redirect(url_for('index'))
 

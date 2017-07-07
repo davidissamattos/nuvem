@@ -43,13 +43,21 @@ class Sounds:
 
     def thunder_turnon(self):
         """Thunder sound"""
-        self.playsound("thunder/thunder1.wav")
+        self.playsound(self.select_random_thunder())
 
     def thunder_thurnoff(self):
         """Thunder sound"""
-        self.playsound("thunder/thunder1.wav")
+        #self.playsound("thunder/thunder1.wav")
         self.turnoffsound()
 
     def rainandthunderstorm(self):
         """Sound of rain and thunder"""
-        self.playsound("thunder/thunder2-2min.wav")
+        self.playsound("thunder/thunder1-2min.wav")
+
+    def rainsound(self):
+        """Rain sound"""
+        self.playsound("rain/rain15s.wav")
+
+    def lightrain(self):
+        """Long sound of rain"""
+        self.playsound("rain/rain70s.wav")
