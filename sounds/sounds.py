@@ -30,7 +30,7 @@ class Sounds:
 
     def select_random_thunder(self):
         number = round(np.random.uniform(1, 8, 1)[0])
-        sound_path = 'thunder/thunder' + number + '.wav'
+        sound_path = 'thunder/thunder' + str(number) + '.wav'
         return sound_path
 
     def testsound(self):
