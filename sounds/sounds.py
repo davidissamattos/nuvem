@@ -43,6 +43,7 @@ class Sounds:
 
     def thunder_turnon(self):
         """Thunder sound"""
+        self.turnoffsound()
         self.playsound(self.select_random_thunder())
 
     def thunder_thurnoff(self):
