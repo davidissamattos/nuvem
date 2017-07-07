@@ -73,7 +73,7 @@ def lightrain():
     return redirect(url_for('index'))
 
 @app.route('/isOn/')
-def lightrain():
+def isOn():
     """ Only sound of light rain """
     lightning = Lightning()
     status = lightning.isOn()
