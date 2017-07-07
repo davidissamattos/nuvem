@@ -84,5 +84,5 @@ def isOn():
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
     #keep_sound_on()
-    os.system('homebridge &')
+    #os.system('homebridge &')
     app.run()
