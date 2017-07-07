@@ -33,8 +33,8 @@ def rain():
 @app.route('/rainandthunderstorm/')
 def rainandthunderstorm():
     """ Blink lights and sound of strong rain and thunder"""
-    #s = Sounds()
-    #s.testsound()
+    s = Sounds()
+    s.rainandthunderstorm()
 
     lightning = Lightning()
     lightning.lightning_rainandthunderstorm()

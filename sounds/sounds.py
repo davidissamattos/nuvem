@@ -17,7 +17,7 @@ def Keepsoundon():
 class Sounds:
     def __init__(self):
         """Init"""
-
+        self.number_thunders = 8
 
     def playsound(self,wavefile):
         f1 = os.path.join(os.path.dirname(__file__), 'wav')
@@ -25,18 +25,31 @@ class Sounds:
         pygame.mixer.music.load(f2)
         pygame.mixer.music.play()
 
+    def turnoffsound(self):
+        pygame.mixer.stop()
+
+    def select_random_thunder(self):
+        number = round(np.random.uniform(1, 8, 1)[0])
+        sound_path = 'thunder/thunder' + number + '.wav'
+        return sound_path
+
     def testsound(self):
         """Test function using test.wav"""
         self.playsound('test.wav')
 
     def thunder(self):
         """Thunder sound"""
-        self.playsound('thunder1.wav')
+        self.playsound(self.select_random_thunder())
 
     def thunder_turnon(self):
         """Thunder sound"""
-        self.playsound("thunder1.wav")
+        self.playsound("thunder/thunder1.wav")
 
     def thunder_thurnoff(self):
         """Thunder sound"""
-        self.playsound("thunder1.wav")
+        self.playsound("thunder/thunder1.wav")
+        self.turnoffsound()
+
+    def rainandthunderstorm(self):
+        """Sound of rain and thunder"""
+        self.playsound("thunder/thunder2-2min.wav")
