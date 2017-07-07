@@ -11,7 +11,7 @@
   "accessories": [
     {
       "accessory": "Http",
-      "name": "Nuvem ON/OFF",
+      "name": "Nuvem",
       "switchHandling": "yes",
       "http_method": "GET",
       "on_url": "http://localhost/turnon/",
