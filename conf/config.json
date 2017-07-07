@@ -1,0 +1,29 @@
+{
+  "bridge": {
+    "name": "HomeBridge",
+    "username": "CC:22:3D:E3:CE:30",
+    "port": 51826,
+    "pin": "031-45-154"
+  },
+
+  "description": "Nuvem control",
+
+  "accessories": [
+    {
+      "accessory": "Http",
+      "name": "Nuvem ON/OFF",
+      "switchHandling": "yes",
+      "http_method": "GET",
+      "on_url": "http://localhost/turnon/",
+      "off_url": "http://localhost/turnoff/",
+      "status_url": "",
+      "service": "Light",
+      "brightnessHandling": "no",
+      "brightness_url": "",
+      "brightnesslvl_url": "",
+      "sendimmediately": "",
+      "username" : "",
+      "password" : ""
+    }
+  ]
+}

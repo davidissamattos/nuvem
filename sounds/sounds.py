@@ -42,12 +42,12 @@ class Sounds:
         self.playsound(self.select_random_thunder())
 
     def thunder_turnon(self):
-        """Thunder sound"""
+        """Turn on the thunder sound"""
         self.turnoffsound()
         self.playsound(self.select_random_thunder())
 
     def thunder_thurnoff(self):
-        """Thunder sound"""
+        """Turn off the thunder sound"""
         #self.playsound("thunder/thunder1.wav")
         self.turnoffsound()
 

@@ -72,6 +72,15 @@ def lightrain():
 
     return redirect(url_for('index'))
 
+@app.route('/isOn/')
+def lightrain():
+    """ Only sound of light rain """
+    lightning = Lightning()
+    status = lightning.isOn()
+
+    return status
+
+
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
     #keep_sound_on()

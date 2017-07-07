@@ -15,10 +15,17 @@ class Lightning:
         GPIO.setup(pin,GPIO.OUT)
 
     def turnOn(self):
+        GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin,GPIO.HIGH)
 
     def turnOff(self):
+        GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin,GPIO.LOW)
+
+    def isOn(self):
+        GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        value = GPIO.input(pin)
+        return value
 
     def teach_lightning(self):
         """Ensinando a namorada"""

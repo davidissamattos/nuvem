@@ -25,3 +25,19 @@ Raspberry Pi powered cloud (with lightning, thunder and rain)
     * install supervisor `sudo apt-get install supervisor`
 * configure supervisor
     * http://www.onurguzel.com/managing-gunicorn-processes-with-supervisor/
+
+
+## Update and launch
+* `git pull` in the correct folder
+* sudo supervisorctl restart nuvem
+
+
+## Install Apple Homekit support
+Follow the instructions on
+* https://github.com/nfarina/homebridge
+* https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
+* https://github.com/rudders/homebridge-http
+* npm install -g homebridge-http
+
+However, Homebridge won't do anything until you've created a config.json file containing your accessories and/or platforms. You can start by copying and modifying the included config-sample.json file which includes declarations for some example accessories and platforms. Each Plugin will have its own expected configuration; the documentation for Plugins should give you some real-world examples for that plugin.
+NOTE: Your config.json file MUST be inside of .homebridge, which is inside of your home folder. On macOS and Linux, the full path for your config.json would be ~/.homebridge/config.json. Any error messages will contain the exact path where your config is expected to be found.
