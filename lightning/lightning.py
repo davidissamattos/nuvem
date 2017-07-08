@@ -5,8 +5,20 @@ except ImportError:
 
 import numpy as np
 import time
+import threading
 
 pin = 26
+
+def background(f):
+    '''
+    a threading decorator
+    use @background above the function you want to run in the background
+    '''
+    def background_function(*a, **kw):
+        thread = threading.Thread(target=f, args=a, kwargs=kw)
+        thread.daemon = True
+        thread.start()
+    return background_function
 
 class Lightning:
     def __init__(self):
@@ -52,6 +64,7 @@ class Lightning:
         """Turn off the lights"""
         self.turnOff()
 
+    @background
     def lightning_rainandthunderstorm(self):
         """Blinking lights"""
 
