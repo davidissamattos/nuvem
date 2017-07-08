@@ -23,7 +23,6 @@ class Lightning:
         GPIO.output(pin,GPIO.LOW)
 
     def isOn(self):
-        GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         value = GPIO.input(pin)
         return value
 
