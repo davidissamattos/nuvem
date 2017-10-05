@@ -31,7 +31,7 @@ Raspberry Pi powered cloud (with lightning, thunder and rain)
 * `git pull` in the correct folder
 * sudo supervisorctl restart nuvem
 
-
+#OBS Remove support for Homebridge. It creates instability with the services it is configured
 ## Install Apple Homekit support
 Follow the instructions on
 * https://github.com/nfarina/homebridge
