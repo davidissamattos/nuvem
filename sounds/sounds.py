@@ -17,7 +17,7 @@ def Keepsoundon():
 class Sounds:
     def __init__(self):
         """Init"""
-        self.number_thunders = 8
+        self.number_thunders = 5
 
     def playsound(self,wavefile):
         f1 = os.path.join(os.path.dirname(__file__), 'wav')
@@ -29,8 +29,10 @@ class Sounds:
         pygame.mixer.music.stop()
 
     def select_random_thunder(self):
-        number = int(round(np.random.uniform(1, 8, 1)[0],0))
+        number = int(round(np.random.uniform(1, self.number_thunders, 1)[0],0))
+        print number
         sound_path = 'thunder/thunder' + str(number) + '.wav'
+        print sound_path
         return sound_path
 
     def testsound(self):
