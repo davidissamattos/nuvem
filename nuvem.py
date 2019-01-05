@@ -80,6 +80,17 @@ def isOn():
 
     return status
 
+@app.route('/toogle/')
+def isOn():
+    """ Only sound of light rain """
+    lightning = Lightning()
+    status = lightning.isOn()
+    if status==True:
+        lightning.lightning_turnoff()
+    else:
+        lightning.lightning_turnon()
+
+    return "OK"
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
