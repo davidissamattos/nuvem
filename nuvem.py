@@ -81,7 +81,7 @@ def isOn():
     return status
 
 @app.route('/toogle/')
-def isOn():
+def toogle():
     """ Only sound of light rain """
     lightning = Lightning()
     status = lightning.isOn()
